@@ -26,7 +26,7 @@ jobs:
           justlogin: true
 
       - name: Add Heroku remote for master
-        run: heroku git:remote --app=${{ env.HEROKU_MASTER_APP_NAME  }}
+        run: heroku git:remote --app=${{ env.HEROKU_APP_NAME  }}
 
       - name: Push to app on Heroku
         run: git push heroku master:master --force
