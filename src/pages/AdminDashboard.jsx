@@ -21,7 +21,6 @@ export default () => {
   }, [users]);
 
   const updateAccountStatus = async (status, userId) => {
-    console.log({ status });
     try {
       const res = await adminEditUser(userId, { status });
       const response = await fetchAllUsers();
@@ -89,6 +88,7 @@ export default () => {
       <div className="body">
         <div className="header">
           <h4 className="no">S/N</h4>
+          <h4 className="staffId">Staff ID</h4>
           <h4 className="name">Name</h4>
           <h4 className="email">Email Address</h4>
           <h4 className="phone">Phone Number</h4>
@@ -99,8 +99,11 @@ export default () => {
         {searchResults.map((u, i) => (
           <div className="header row" key={u.uuid}>
             <h4 className="no">{i + 1}</h4>
+            <h4 className="staffId">{u.staffId}</h4>
             <h4 className="name">
-              {`${u.surname} ${u.firstname} ${u.lastname}`}{" "}
+              {`${u.surname || "--"} ${u.firstname || "--"} ${
+                u.lastname || "--"
+              }`}{" "}
             </h4>
             <h4 className="email">{u.email}</h4>
             <h4 className="phone">{u.phonenumber}</h4>

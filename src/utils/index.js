@@ -13,3 +13,11 @@ export const status = (number) => {
   }
   return status;
 };
+
+export const nationality = (value) => {
+  if (value == 0) {
+    return "Nigeria";
+  } else if (value == 1) {
+    return "Foreigner";
+  }
+};

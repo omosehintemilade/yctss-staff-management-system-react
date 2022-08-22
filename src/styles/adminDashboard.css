@@ -63,6 +63,9 @@
   min-width: 50px;
   text-align: center;
 }
+.staffId {
+  min-width: 100px;
+}
 
 .name,
 .email {

@@ -3,6 +3,7 @@ import { Button, Logo, ProfileSnippet } from "../components";
 import User from "../assets/user.jpg";
 import { useContext, useEffect } from "react";
 import { Context } from "../context";
+import { nationality } from "../utils";
 
 export default () => {
   const navigate = useNavigate();
@@ -10,7 +11,6 @@ export default () => {
   const {
     state: { user }
   } = useContext(Context);
-  console.log({ user });
 
   useEffect(() => {
     //   User is yet to provide their detailss
@@ -70,7 +70,7 @@ export default () => {
 
           <div className="profile__item">
             <h6>Nationality</h6>
-            <p>{user.nationality == 0 ? "Nigeria" : "Foreigner"}</p>
+            <p>{nationality(user.nationality)}</p>
           </div>
 
           <div className="profile__item">

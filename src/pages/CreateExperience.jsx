@@ -7,20 +7,12 @@ import { showToast } from "../utils";
 import { UPDATE_EXPERIENCE } from "../context/type";
 
 export default () => {
-  // const [values, setValues] = useState({
-  //   name: "",
-  //   started: "",
-  //   ended: "",
-  //   position: "",
-  //   subject: ""
-  // });
-
   const [values, setValues] = useState({
-    ended: "2005",
-    name: "Omosehin Ifeoluwa Olayinka",
-    position: "Lecturer",
-    started: "2000",
-    subject: "Test"
+    name: "",
+    started: "",
+    ended: "",
+    position: "",
+    subject: ""
   });
 
   const [loading, setLoading] = useState(false);
@@ -103,7 +95,6 @@ export default () => {
           }
 
           try {
-            console.log({ values });
             setLoading(true);
             const res = await createExperienceFn(values);
             setLoading(false);

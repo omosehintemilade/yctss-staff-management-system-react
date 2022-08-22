@@ -19,35 +19,22 @@ export default () => {
     dispatch
   } = useContext(Context);
 
-  // const [values, setValues] = useState({
-  //   title: user.title || "",
-  //   surname: user.surname || "",
-  //   firstname: user.firstname || "",
-  //   lastname: user.lastname || "",
-  //   dob: user.dob || "",
-  //   pob: user.pob || "",
-  //   lga: user.lga || "",
-  //   email: user.email,
-  //   genotype: user.genotype || "",
-  //   bloodgroup: user.bloodgroup || "",
-  //   phonenumber: user.phonenumber || "",
-  //   address: user.address || ""
-  // });
-
   const [values, setValues] = useState({
-    title: user.title || "Mr",
-    surname: user.surname || "ddd",
-    firstname: user.firstname || "ddddd",
-    lastname: user.lastname || "dddddd",
-    dob: user.dob || "22-01-2022",
-    pob: user.pob || "222",
-    lga: user.lga || "222",
+    title: user.title || "",
+    surname: user.surname || "",
+    firstname: user.firstname || "",
+    lastname: user.lastname || "",
+    dob: user.dob || "",
+    pob: user.pob || "",
+    lga: user.lga || "",
     email: user.email,
-    genotype: user.genotype || "222",
-    bloodgroup: user.bloodgroup || "222",
-    phonenumber: user.phonenumber || "222",
-    address: user.address || "22"
+    genotype: user.genotype || "",
+    bloodgroup: user.bloodgroup || "",
+    phonenumber: user.phonenumber || "",
+    address: user.address || "",
+    nationality: user.nationality || ""
   });
+
   const handleChange = ({ target }) => {
     values[target.name] = target.value;
     setValues(values);
@@ -194,7 +181,7 @@ export default () => {
             onChange={(e) => handleChange(e)}
           >
             <option value="">-- --</option>
-            <option value="0">Indigene</option>
+            <option value="0">Nigeria</option>
             <option value="1">Foreigner</option>
           </select>
           <small className="nationality_error">
@@ -242,7 +229,6 @@ export default () => {
       <Button
         text={loading ? "Loading..." : "Save Data"}
         onClick={async () => {
-          console.log({ values });
           for (const [key] of Object.entries(values)) {
             if (!values[key]) {
               const err = document.querySelector(`.${key}_error`);

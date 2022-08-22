@@ -8,11 +8,12 @@ import { createUser } from "../utils/services";
 export default () => {
   const navigate = useNavigate();
   const [values, setValues] = useState({
-    email: "johnsmith@example.com",
-    phonenumber: "08103826574",
-    password: "1234",
-    confirmpassword: "1234"
+    email: "",
+    phonenumber: "",
+    password: "",
+    confirmpassword: ""
   });
+
   const [loading, setLoading] = useState(false);
 
   const handleChange = ({ target }) => {
@@ -72,7 +73,6 @@ export default () => {
           text={loading ? "Loading..." : "Sign Up"}
           onClick={async () => {
             for (const [key, value] of Object.entries(values)) {
-              console.log({ key, value });
               if (!values[key]) {
                 const err = document.querySelector(`.${key}_error`);
                 err.style.display = "block";

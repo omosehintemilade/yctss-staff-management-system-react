@@ -45,7 +45,7 @@ export const ProtectedRoute = ({ children }) => {
   async function Authenticate() {
     setAuthToken(navigate);
 
-    const userIsEmpty = gitisObjEmpty(user);
+    const userIsEmpty = isObjEmpty(user);
 
     if (userIsEmpty) {
       try {

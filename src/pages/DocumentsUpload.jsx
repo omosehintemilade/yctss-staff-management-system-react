@@ -4,7 +4,7 @@ import { Button, Logo } from "../components";
 import { Context } from "../context";
 import { UPDATE_FILES } from "../context/type";
 import "../styles/documentsUpload.css";
-import { showToast, status } from "../utils";
+import { showToast } from "../utils";
 import { deleteFile, fetchFiles, uploadFile } from "../utils/services";
 
 export default () => {
@@ -13,6 +13,15 @@ export default () => {
   const [file, setFile] = useState({});
   const [loading, setLoading] = useState(false);
 
+  const showStatus = (status) => {
+    if (status === 0) {
+      return "Pending";
+    } else if (status === 1) {
+      return "Approved";
+    } else if (status === 2) {
+      return "Declined";
+    }
+  };
   const fileInput = useRef(null);
   const {
     state: { files },
@@ -166,7 +175,7 @@ export default () => {
                 <div className="li sn">{index + 1}</div>
                 <div className="li fid">{f.fileId}</div>
                 <div className="li fn">{f.name}</div>
-                <div className="li">{status(f.status)}</div>
+                <div className="li">{showStatus(f.status)}</div>
                 <button
                   className="li delete_btn"
                   onClick={async () => {
@@ -175,6 +184,7 @@ export default () => {
                       type: UPDATE_FILES,
                       payload: res.data
                     });
+                    setDocsCount(res.data.length);
                   }}
                 >
                   Delete

@@ -19,13 +19,12 @@ export const ProfileSnippet = () => {
   const {
     state: { user }
   } = useContext(Context);
-  console.log({ user });
 
   return (
     <div className="profile_image-section border">
       <img
         className="profile_img"
-        src={`${API_BASE_URL}${user.profile_pics}` || User}
+        src={user.profile_pics ? `${API_BASE_URL}${user.profile_pics}` : User}
       />
 
       <p className="snippet">

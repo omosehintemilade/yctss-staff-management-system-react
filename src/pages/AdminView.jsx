@@ -8,7 +8,7 @@ import {
   updateDocumentStatus
 } from "../utils/services";
 import { useParams } from "react-router-dom";
-import { showToast, status } from "../utils";
+import { nationality, showToast, status } from "../utils";
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export default () => {
@@ -28,8 +28,6 @@ export default () => {
       setData(res.data);
     })();
   }, []);
-
-  console.log({ data });
 
   const handleChange = ({ target }) => {
     values[target.name] = target.value;
@@ -136,14 +134,16 @@ export default () => {
 
             <div className="">
               <h6>Nationality</h6>
-              <p>{user.nationality == 0 ? "Nigeria" : "Foreigner" || "--"}</p>
+              <p>{nationality(user.nationality) || "--"}</p>
             </div>
           </div>
 
           <div className="user_profile_img">
             <img
               className="pp"
-              src={`${API_BASE_URL}${user.profile_pics}` || User}
+              src={
+                user.profile_pics ? `${API_BASE_URL}${user.profile_pics}` : User
+              }
               alt="profile pics"
             />
           </div>

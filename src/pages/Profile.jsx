@@ -11,7 +11,7 @@ export default () => {
   const {
     state: { user }
   } = useContext(Context);
-  console.log({ user });
+
   useEffect(() => {
     //   User is yet to provide their detailss
     if (!user.surname) {
