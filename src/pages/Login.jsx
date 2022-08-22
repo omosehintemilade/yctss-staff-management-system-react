@@ -13,11 +13,11 @@ export default () => {
 
       <div className="_section__btn-wrapper">
         <Button
-          text={"Log In As Admin"}
+          text={"Log In as Admin"}
           onClick={() => navigate("/admin/login")}
         />
         <Button
-          text={"Log In As User"}
+          text={"Log In as User"}
           onClick={() => navigate("/user/login")}
         />
       </div>

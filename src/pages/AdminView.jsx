@@ -11,6 +11,7 @@ import { useParams } from "react-router-dom";
 import { nationality, showToast, status } from "../utils";
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
+console.log({ API_BASE_URL });
 export default () => {
   const { userId } = useParams();
 

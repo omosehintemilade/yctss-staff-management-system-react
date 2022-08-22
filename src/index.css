@@ -139,3 +139,8 @@ small {
 .delete_btn:hover {
   background-color: #bf0f0f;
 }
+
+.logout_btn {
+  margin-top: 40px;
+  width: 200px;
+}

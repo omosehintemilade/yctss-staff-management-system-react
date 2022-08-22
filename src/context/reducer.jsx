@@ -1,4 +1,9 @@
-import { POPULATE_USER, UPDATE_EXPERIENCE, UPDATE_FILES } from "./type";
+import {
+  POPULATE_USER,
+  UNPOPULATE_USER,
+  UPDATE_EXPERIENCE,
+  UPDATE_FILES
+} from "./type";
 
 export const reducer = (state, { type, payload }) => {
   switch (type) {
@@ -6,6 +11,12 @@ export const reducer = (state, { type, payload }) => {
       return (state = {
         ...state,
         user: payload
+      });
+    }
+    case UNPOPULATE_USER: {
+      return (state = {
+        ...state,
+        user: {}
       });
     }
     case UPDATE_EXPERIENCE: {

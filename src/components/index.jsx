@@ -2,7 +2,9 @@ import { useContext } from "react";
 import logo from "../assets/logo.png";
 import { Context } from "../context";
 import User from "../assets/user.jpg";
-import { status } from "../utils";
+import { showToast, status } from "../utils";
+import { UNPOPULATE_USER } from "../context/type";
+import { useNavigate } from "react-router-dom";
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const Logo = ({ style }) => (
@@ -17,9 +19,10 @@ export const Button = ({ onClick, text, className }) => (
 
 export const ProfileSnippet = () => {
   const {
-    state: { user }
+    state: { user },
+    dispatch
   } = useContext(Context);
-
+  const navigate = useNavigate();
   return (
     <div className="profile_image-section border">
       <img
@@ -42,6 +45,17 @@ export const ProfileSnippet = () => {
       <p className="snippet">
         Subject: <span>{user.subject || "--"}</span>
       </p>
+
+      <Button
+        text={"Log out"}
+        className="logout_btn"
+        onClick={() => {
+          dispatch({ type: UNPOPULATE_USER });
+          localStorage.removeItem("token");
+          navigate("/user/login");
+          showToast({ message: "Account logged out successfully" });
+        }}
+      />
     </div>
   );
 };
