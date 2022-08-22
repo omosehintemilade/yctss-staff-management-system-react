@@ -1,0 +1,103 @@
+.view_section {
+  height: 100%;
+}
+
+.biodata,
+.qualifications,
+.experience,
+.md_wp {
+  background-color: #e5e5e5;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+
+.header_title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.bio_pp {
+  display: flex;
+  align-items: center;
+}
+
+.biodata_items {
+  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.pp {
+  border: 6px solid green;
+  border-radius: 50%;
+  object-fit: cover;
+  height: 180px;
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.qualifications h4 {
+  margin-bottom: 5px;
+}
+
+.qq {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card h6 {
+  text-align: center;
+  font-size: 16px;
+}
+
+.doc_img {
+  object-fit: cover;
+  width: 350px;
+  height: 350px;
+  border-radius: 4px;
+}
+
+.qq .actions button {
+  padding: 8px 12px;
+  border-radius: 4px;
+  outline: none;
+  border: transparent;
+  margin-bottom: 10px;
+  width: 350px;
+}
+
+/* .experience {
+  margin-bottom: 0px;
+} */
+
+.ex_wp {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.ex_wp .card {
+  background: white;
+  border-radius: 4px;
+  padding: 10px 15px;
+  box-shadow: 8px 9px 20px -7px rgb(36 33 33 / 75%);
+  -webkit-box-shadow: 8px 9px 20px -7px rgb(36 33 33 / 75%);
+  -moz-box-shadow: 8px 9px 20px -7px rgba(36, 33, 33, 0.75);
+}
+
+.modify h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.md_wp {
+  display: flex;
+  gap: 20px;
+}
+
+.md_item {
+  flex: 1;
+}

@@ -1,0 +1,32 @@
+.profile__wrapper {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  margin-top: 20px;
+  min-width: 700px;
+}
+
+.profile {
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 70%;
+  margin: 0px auto 10px auto;
+  gap: 20px;
+}
+
+.profile_image-section {
+  padding: 10px 30px;
+}
+
+.ex {
+  text-align: left;
+  width: 100%;
+}
+
+.ex_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}

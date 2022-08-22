@@ -1,0 +1,50 @@
+.profile__wrapper {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.profile {
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 70%;
+  margin: 0px auto 10px auto;
+  gap: 20px;
+}
+
+.profile_image-section {
+  padding: 10px 30px;
+}
+
+.profile_img {
+  border: 6px solid green;
+  border-radius: 50%;
+  object-fit: cover;
+  height: 180px;
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.data_card {
+  padding: 5px 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.icon {
+  height: 40px;
+}
+
+.data h6 {
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.data p {
+  margin-bottom: 14px;
+  font-weight: 500;
+}
